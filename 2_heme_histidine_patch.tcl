@@ -29,7 +29,7 @@ if {$mol < 0} { puts "ERROR: No molecule loaded."; return }
 set topname_raw [molinfo $mol get name]
 set topname     [file rootname $topname_raw]
 if {$topname eq ""} { set topname "top" }
-set patch_file "${topname}_hispatch.txt"   ;# <-- output: exact patch commands
+set patch_file "${topname}_patch.txt"   ;# <-- output: exact patch commands
 
 # Collect all HEME/HEC FE atoms
 set fe_sel [atomselect $mol "resname HEME HEC and name FE"]
@@ -177,3 +177,4 @@ if {[array size seen] == 0} {
 }
 
 puts ">> Patch file written: $patch_file"
+
